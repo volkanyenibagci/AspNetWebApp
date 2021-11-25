@@ -194,7 +194,9 @@
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="DAL\IUrunRepository.cs" />
@@ -2224,9 +2226,12 @@
     <Content Include="Views\Home\Kategori.cshtml" />
     <Content Include="Views\Home\KategoriEkle.cshtml" />
     <Content Include="Views\Home\KategoriGetir.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Personel\Index.cshtml" />
     <Content Include="Views\Personel\PersonelEkle.cshtml" />
     <Content Include="Views\Personel\PersonelGetir.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Satis\Index.cshtml" />
     <Content Include="Views\Satis\SatisDetay.cshtml" />
     <Content Include="Views\Satis\SatisGetir.cshtml" />
