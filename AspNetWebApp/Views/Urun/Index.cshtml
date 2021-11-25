@@ -1,0 +1,82 @@
+﻿@using AspNetWebApp.Models.Siniflar
+@model IEnumerable<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_KategoriLayout.cshtml";
+}
+
+
+<!-- Content Wrapper. Contains page content-->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Kategoriler</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+                        <li class="breadcrumb-item active">Kategoriler</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!--  /.container-fluid-->
+    </section>
+    <!--  Main content-->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="col-2">
+                                @*<button class="btn btn-block btn-primary">Yeni Kayıt</button>*@
+                                <a href="~/Urun/YeniUrun" class="btn btn-block btn-primary">Yeni Ürün</a>
+                            </div>
+                        </div>
+                        <!--  /.card-header-->
+                        <a href="~/App_Data/"></a>
+
+                        <div class="card-body">
+                            @(Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.UrunID).Titled("Ürün ID");
+            columns.Add(model => model.UrunAd).Titled("Ürün Adı");
+            columns.Add(model => model.Marka).Titled("Marka");
+            columns.Add(model => model.Stok).Titled("Stok");
+            columns.Add(model => model.AlisFiyati).Titled("Alış Fiyatı");
+            columns.Add(model => model.SatisFİyati).Titled("Satış Fiyatı");
+            columns.Add(model => model.Kategori.KategoriAd).Titled("Kategori");
+            columns.Add(model => model.UrunGorsel).Titled("Ürün Görseli");
+            columns.Add(model => "<a class=\"btn btn-block btn-danger\"  href=UrunSil/" + model.UrunID + ">Sil</a>").Encoded(false);
+            columns.Add(model => "<a class=\"btn btn-block btn-info\"  href=UrunGetir/" + model.UrunID + ">Düzenle</a>").Encoded(false);
+            //columns.Add(model => "<button class=\"btn btn-block btn-danger\" data-id=\"" + model.KategoriID + "\">Sil</button>").Encoded(false);
+            //columns.Add(model => "<a class=\"btn btn-block btn-info\"  href=Index/\"" + model.KategoriID + "\">Düzenle</a>").Encoded(false);
+
+        })
+        .Empty("Kayıt bulunamadı")
+        .Filterable()
+        .Sortable()
+        .Pageable()
+    )
+                        </div>
+
+                        <!--   /.card-body-->
+                    </div>
+                    <!--  /.card-->
+                </div>
+                <!--  /.col-->
+            </div>
+            <!--  /.row-->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+
+

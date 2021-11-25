@@ -1,0 +1,65 @@
+﻿@model  AspNetWebApp.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/_KategoriLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Personel Ekle</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+                        <li class="breadcrumb-item active">Kategoriler</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!--  /.container-fluid-->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+
+
+                        <div class="card-body">
+                            <form class="form-group" action="~/Personel/PersonelEkle" method="post">
+                                @Html.Label("Personel Adı")
+                                @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Personel Soyadı")
+                                @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Personel Görseli")
+                                @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Departman")
+                                @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+                                @*@Html.TextBoxFor(x => x.KategoriId, new { @class = "form-control" })*@
+                            <br />
+                                <button class="btn btn-success">Kaydet</button>
+                            </form>
+
+                        </div>
+
+                        <!--   /.card-body-->
+                    </div>
+                    <!--  /.card-->
+                </div>
+                <!--  /.col-->
+            </div>
+            <!--  /.row-->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+
+
+</div>
+

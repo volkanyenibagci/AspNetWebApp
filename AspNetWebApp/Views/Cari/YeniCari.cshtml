@@ -1,0 +1,63 @@
+﻿@model AspNetWebApp.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/_KategoriLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Cari Ekle</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+                        <li class="breadcrumb-item active">Kategoriler</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!--  /.container-fluid-->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+
+
+                        <div class="card-body">
+                            <form class="form-group" action="~/Cari/YeniCari" method="post">
+                                @Html.Label("Adı")
+                                @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+                                @Html.Label("Soyadı")
+                                @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+                                @Html.Label("Şehir")
+                                @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+                                @Html.Label("E-posta")
+                                @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+
+                                <br />
+                                <button class="btn btn-info">Kaydet</button>
+                            </form>
+
+                        </div>
+
+                        <!--   /.card-body-->
+                    </div>
+                    <!--  /.card-->
+                </div>
+                <!--  /.col-->
+            </div>
+            <!--  /.row-->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+
+
+</div>
+
+

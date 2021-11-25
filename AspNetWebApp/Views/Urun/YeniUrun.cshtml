@@ -1,0 +1,77 @@
+﻿@model AspNetWebApp.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_KategoriLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Kategori Ekle</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+                        <li class="breadcrumb-item active">Kategoriler</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!--  /.container-fluid-->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+
+
+                        <div class="card-body">
+                            <form class="form-group" action="~/Urun/YeniUrun" method="post">
+                                @Html.Label("Ürün Adı")
+                                @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Marka")
+                                @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Stok")
+                                @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Alış Fiyat")
+                                @Html.TextBoxFor(x => x.AlisFiyati, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Satış Fiyatı")
+                                @Html.TextBoxFor(x => x.SatisFİyati, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Kategori ID")
+                                @Html.DropDownListFor(x=>x.KategoriId,(List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+                                @*@Html.TextBoxFor(x => x.KategoriId, new { @class = "form-control" })*@
+                                <br />
+                                @Html.Label("Ürün Görsel")
+                                @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Durum")
+                                @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+                                <br />
+                                <button class="btn btn-info">Kaydet</button>
+                            </form>
+
+                        </div>
+
+                        <!--   /.card-body-->
+                    </div>
+                    <!--  /.card-->
+                </div>
+                <!--  /.col-->
+            </div>
+            <!--  /.row-->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+
+
+
+</div>
+
