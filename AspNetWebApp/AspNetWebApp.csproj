@@ -2271,6 +2271,12 @@
       <DependentUpon>202111280816430_Migration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetWebApp.Entities\AspNetWebApp.Entities.csproj">
+      <Project>{36e5fa31-d190-4c25-a7cf-6263e5d5ae59}</Project>
+      <Name>AspNetWebApp.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
