@@ -11,14 +11,21 @@ namespace AspNetWebApp.Controllers
     {
 
         Context db = new Context();
+        
+        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult Anasayfa()
         {
-            return View();
+
+            var KullaniciAdi = (string) Session["AdminKullaniciAdi"];
+            var degerler = db.Admins.FirstOrDefault(x => x.KullaniciAd == KullaniciAdi);
+            ViewBag.m = KullaniciAdi;
+            return View(degerler);
         }
 
         public ActionResult Kategori()

@@ -204,9 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111250708181_Migration1.cs" />
-    <Compile Include="Migrations\202111250708181_Migration1.designer.cs">
-      <DependentUpon>202111250708181_Migration1.cs</DependentUpon>
+    <Compile Include="Migrations\202111280816430_Migration1.cs" />
+    <Compile Include="Migrations\202111280816430_Migration1.Designer.cs">
+      <DependentUpon>202111280816430_Migration1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
@@ -2267,8 +2267,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111250708181_Migration1.resx">
-      <DependentUpon>202111250708181_Migration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111280816430_Migration1.resx">
+      <DependentUpon>202111280816430_Migration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -2286,9 +2286,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>5000</DevelopmentServerPort>
+          <DevelopmentServerPort>5555</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5000/</IISUrl>
+          <IISUrl>http://localhost:5555/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

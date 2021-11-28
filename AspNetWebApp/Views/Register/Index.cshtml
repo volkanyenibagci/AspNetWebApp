@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Registration Page</title>
+  <title>AdminLTE 3 | Kayıt Sayfası</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -28,12 +28,12 @@
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new membership</p>
+      <p class="login-box-msg">Kayıt Ol</p>
 
       <form action="~/Register/KullaniciEkle" method="post">
         <div class="input-group mb-3">
           @* <input type="text" class="form-control" placeholder="Full name"> *@
-          @Html.TextBoxFor(x => x.KullaniciAd, new { @class = "form-control" })
+          @Html.TextBoxFor(x => x.KullaniciAd, new { placeholder = "Kullanıcı Adı",@class = "form-control" })
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -50,7 +50,7 @@
         @* </div> *@
         <div class="input-group mb-3">
           @* <input type="password" class="form-control" placeholder="Password"> *@
-          @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+          @Html.TextBoxFor(x => x.Sifre, new {placeholder = "Şifre", @class = "form-control",@type = "password"  })
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -70,31 +70,31 @@
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <label for="agreeTerms">
-               I agree to the <a href="#">terms</a>
+               <a href="#">Kullanıcı koşulları</a>'nı kabul ediyorum.
               </label>
             </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button type="submit" class="btn btn-primary btn-block">Kayıt Ol</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
 
       <div class="social-auth-links text-center">
-        <p>- OR -</p>
+        <p>- VEYA -</p>
         <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i>
-          Sign up using Facebook
+          Facebook ile Kayıt Ol
         </a>
         <a href="#" class="btn btn-block btn-danger">
           <i class="fab fa-google-plus mr-2"></i>
-          Sign up using Google+
+          Google+ ile Kayıt Ol
         </a>
       </div>
 
-      <a href="~/Login/index" class="text-center">I already have a membership</a>
+      <a href="~/Login/Index" class="text-center">Zaten üyeliğim var.</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
