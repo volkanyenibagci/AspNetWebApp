@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{9938A74B-B34F-4816-843C-F914D856E180}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>AspNetWebApp.Bll</RootNamespace>
+        <AssemblyName>AspNetWebApp.Bll</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="DepartmanBll\DepartmanManager.cs" />
+        <Compile Include="KategoriBll\KategoriManager.cs" />
+        <Compile Include="KullaniciBll\KullaniciManager.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="ToPasswordRepository.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\AspNetWebApp.Dal\AspNetWebApp.Dal.csproj">
+        <Project>{7e6b577a-301d-48c4-82e0-247dc771ee30}</Project>
+        <Name>AspNetWebApp.Dal</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\AspNetWebApp.Entities\AspNetWebApp.Entities.csproj">
+        <Project>{36e5fa31-d190-4c25-a7cf-6263e5d5ae59}</Project>
+        <Name>AspNetWebApp.Entities</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\AspNetWebApp.Interfaces\AspNetWebApp.Interfaces.csproj">
+        <Project>{4091fde8-4c67-4c63-98cd-ec628df92d04}</Project>
+        <Name>AspNetWebApp.Interfaces</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
