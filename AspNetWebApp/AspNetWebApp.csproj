@@ -2272,9 +2272,21 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AspNetWebApp.Bll\AspNetWebApp.Bll.csproj">
+      <Project>{9938a74b-b34f-4816-843c-f914d856e180}</Project>
+      <Name>AspNetWebApp.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AspNetWebApp.Dal\AspNetWebApp.Dal.csproj">
+      <Project>{7e6b577a-301d-48c4-82e0-247dc771ee30}</Project>
+      <Name>AspNetWebApp.Dal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AspNetWebApp.Entities\AspNetWebApp.Entities.csproj">
       <Project>{36e5fa31-d190-4c25-a7cf-6263e5d5ae59}</Project>
       <Name>AspNetWebApp.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AspNetWebApp.Interfaces\AspNetWebApp.Interfaces.csproj">
+      <Project>{4091fde8-4c67-4c63-98cd-ec628df92d04}</Project>
+      <Name>AspNetWebApp.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
