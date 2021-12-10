@@ -28,3 +28,28 @@ update-database
 ```
 
 ## * Authentication with Sessions
+### Web.Config
+```
+ <system.web>
+    <compilation debug="true" targetFramework="4.7.2" />
+    <httpRuntime targetFramework="4.5" />
+    <authentication mode="Forms">
+      <forms loginUrl="/Login/Index/">
+      </forms>
+    </authentication>
+  </system.web>
+```
+### Global.asax.cs
+For all pages security
+```
+GlobalFilters.Filters.Add(new AuthorizeAttribute());
+```
+### LoginController.cs
+Exclude control security
+```
+[AllowAnonymous]
+    public class LoginController : Controller
+    {
+```
+
+
