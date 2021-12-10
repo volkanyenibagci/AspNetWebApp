@@ -26,3 +26,5 @@ Enable-Migrations
 Add-Migration MigrationName
 update-database
 ```
+
+## * Authentication with Sessions
