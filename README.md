@@ -17,3 +17,12 @@ Asp.Net Mvc Web Application
 - AspNetWebApp.Dal 
 - AspNetWebApp.Bll
 
+## * Code First with EntityFramework , 
+You can migrate of datase with Code First Entity Framework.
+Basic CLI commands for using Entitiy Framework on Visual Studio is down below.
+```
+After clone the project;
+Enable-Migrations
+Add-Migration MigrationName
+update-database
+```
