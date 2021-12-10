@@ -8,3 +8,12 @@ Asp.Net Mvc Web Application
 - Framework : .Net Framework v4.7.2
 - Database : Postgresql
 - Theme : adminlte (https://adminlte.io/)
+
+## * Repository Pattern
+
+## * Use of layered architecture,
+- AspNetWebApp
+- AspNetWebApp.Entities
+- AspNetWebApp.Dal 
+- AspNetWebApp.Bll
+
