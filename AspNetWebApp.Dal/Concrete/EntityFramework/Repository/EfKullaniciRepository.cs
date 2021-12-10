@@ -11,34 +11,41 @@ namespace AspNetWebApp.Dal.Concrete.EntityFramework.Repository
 {
     public class EfKullaniciRepository : IKullaniciDal
     {
+        /*
         private AspNetWebAppContext context = new AspNetWebAppContext();
+        */
+        AspNetWebAppContext _context = new AspNetWebAppContext();
         
+        public EfKullaniciRepository(AspNetWebAppContext aspNetWebAppContext)
+        {
+            this._context = aspNetWebAppContext;
+        }
         public Admin Kaydet(Admin entity)
         {
-            context.Admins.Add(entity);
-            context.SaveChanges();
+            _context.Admins.Add(entity);
+            _context.SaveChanges();
             return entity;
         }
 
         public List<Admin> Listele()
         {
-            return context.Admins.AsNoTracking().ToList();
+            return _context.Admins.AsNoTracking().ToList();
         }
 
         public List<Admin> Listele(Expression<Func<Admin, bool>> predicate)
         {
-            return context.Admins.Where(predicate).ToList();
+            return _context.Admins.Where(predicate).ToList();
         }
 
         public Admin Getir(int id)
         {
-            return context.Admins.AsNoTracking().Where(x => x.AdminID == id).SingleOrDefault();
+            return _context.Admins.AsNoTracking().Where(x => x.AdminID == id).SingleOrDefault();
         }
 
         public int Guncelle(Admin entity)
         {
-            context.Admins.AddOrUpdate(entity);
-            return context.SaveChanges();
+            _context.Admins.AddOrUpdate(entity);
+            return _context.SaveChanges();
         }
 
         public bool Sil(int id)
@@ -49,13 +56,22 @@ namespace AspNetWebApp.Dal.Concrete.EntityFramework.Repository
 
         public Admin KullaniciGiris(string KullaniciAdi, string sifre)
         {
-            return context.Admins.Where(x=>x.KullaniciAd==KullaniciAdi && x.Sifre==sifre).SingleOrDefault();
+            try
+            {
+                var bilgiler = _context.Admins.FirstOrDefault(x => x.KullaniciAd == KullaniciAdi && x.Sifre == sifre);
+                return _context.Admins.Where(x=>x.KullaniciAd==KullaniciAdi && x.Sifre==sifre).SingleOrDefault();
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public bool Sil(Admin entity)
         {
-            context.Admins.Remove(entity);
-            return context.SaveChanges()>0;
+            _context.Admins.Remove(entity);
+            return _context.SaveChanges()>0;
         }
     }
 }

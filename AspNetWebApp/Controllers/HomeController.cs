@@ -18,7 +18,7 @@ namespace AspNetWebApp.Controllers
             return View();
         }
 
-        [Authorize]
+        /*[Authorize]*/
         public ActionResult Anasayfa()
         {
 

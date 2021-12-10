@@ -13,7 +13,10 @@ namespace AspNetWebApp.Dal.Concrete.EntityFramework.Repository
     {
         private AspNetWebAppContext context = new AspNetWebAppContext();
 
-        
+        public EfKategoriRepository(AspNetWebAppContext aspNetWebAppContext)
+        {
+            this.context = aspNetWebAppContext;
+        }
         public Kategori Kaydet(Kategori entity)
         {
             context.Kategoris.Add(entity);
