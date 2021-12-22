@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Linq;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Security;
-using AspNetWebApp.Bll.KullaniciBll;
 using AspNetWebApp.Dal.Abstract.KullaniciDal;
-using AspNetWebApp.Dal.Abstract.UrunDal;
 using AspNetWebApp.Dal.Concrete.EntityFramework.Context;
 using AspNetWebApp.Dal.Concrete.EntityFramework.Repository;
-using AspNetWebApp.Interfaces.Kullanici;
 using AspNetWebApp.Models.Siniflar;
 
 namespace AspNetWebApp.Controllers
@@ -78,24 +76,47 @@ namespace AspNetWebApp.Controllers
                 throw new Exception(e.Message);
             }*/
 
-            var bilgiler = _kullaniciDal.Listele().FirstOrDefault(x=>x.KullaniciAd==a.KullaniciAd&&x.Sifre==a.Sifre);
 
-            if (bilgiler!=null)
+            try
             {
-                FormsAuthentication.SetAuthCookie(bilgiler.KullaniciAd,false);
-                Session["AdminKullaniciAdi"] = bilgiler.KullaniciAd.ToString();
-                return RedirectToAction("Anasayfa", "Home");
+                var bilgiler = _kullaniciDal.Listele().FirstOrDefault(x=>x.KullaniciAd==a.KullaniciAd&&x.Sifre==a.Sifre);
+
+                if (bilgiler!=null)
+                {
+                    FormsAuthentication.SetAuthCookie(bilgiler.KullaniciAd,false);
+                    Session["AdminKullaniciAdi"] = bilgiler.KullaniciAd.ToString();
+
+                    try
+                    {
+                        return RedirectToAction("Anasayfa", "Home");
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        string HataMesaj = e.Message;
+                        throw;
+                    }
+                    
+                }
+                else
+                {
+                    return View();
+                }
             }
-            else
+            catch (Exception e)
             {
-                return View();
+                Console.WriteLine(e);
+                throw;
             }
+           
         }
 
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index");
+            
+            
         }
     }
 }

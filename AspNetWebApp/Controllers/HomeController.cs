@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AspNetWebApp.Dal.Concrete.EntityFramework.Context;
 using AspNetWebApp.Models.Siniflar;
 
 namespace AspNetWebApp.Controllers
@@ -11,8 +12,9 @@ namespace AspNetWebApp.Controllers
     {
 
         Context db = new Context();
+        AspNetWebAppContext db2 = new AspNetWebAppContext();
         
-        [Authorize]
+        /*[Authorize]*/
         public ActionResult Index()
         {
             return View();
@@ -21,11 +23,17 @@ namespace AspNetWebApp.Controllers
         /*[Authorize]*/
         public ActionResult Anasayfa()
         {
-
-            var KullaniciAdi = (string) Session["AdminKullaniciAdi"];
+            
+            /*var KullaniciAdi = (string) Session["AdminKullaniciAdi"];
             var degerler = db.Admins.FirstOrDefault(x => x.KullaniciAd == KullaniciAdi);
             ViewBag.m = KullaniciAdi;
-            return View(degerler);
+            return View(degerler);*/
+            
+           var KullaniciAdi = (string) Session["AdminKullaniciAdi"];
+           var degerler = db2.Admins.FirstOrDefault(x => x.KullaniciAd == KullaniciAdi);
+           ViewBag.m = KullaniciAdi;
+            return View();
+
         }
 
         public ActionResult Kategori()
